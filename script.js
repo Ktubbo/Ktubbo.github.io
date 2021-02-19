@@ -1,6 +1,6 @@
 $(document).ready(function() {
-   const apiRoot = 'https://damp-reef-44396.herokuapp.com/v1/task/';
-   const trelloApiRoot = 'https://damp-reef-44396.herokuapp.com/v1/trello/';
+   const apiRoot = 'http://localhost:8080/v1/task/';
+   const trelloApiRoot = 'http://localhost:8080/v1/trello/';
    const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
    const $tasksContainer = $('[data-tasks-container]');
 
@@ -188,7 +188,7 @@ $(document).ready(function() {
          data: JSON.stringify({
          name: relatedTask.title,
             description: relatedTask.content,
-            listId: selectedListId
+            idList: selectedListId
          }),
          success: function(data) {
             console.log('Card created - ' + data.shortUrl);
